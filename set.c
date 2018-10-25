@@ -6,6 +6,7 @@
 #include <assert.h>
 #include <string.h>
 #include "set.h"
+#include "c99.h"
 
 #define strEQ(s,t) (strcmp((s),(t)) == 0)
 #define strLT(s,t) (strcmp((s),(t)) < 0)
@@ -57,7 +58,8 @@ void insertInto(Set s, char *str)
 	Link curr, prev;
 	int found = findNode(s->elems,str,&curr,&prev);
 	if (found) {
-		Link curr = s->elems, prev = NULL;
+		Link curr = s->elems;
+		prev = NULL;
 		while (curr != NULL && strLT(curr->val,str)) {
 			prev = curr;
 			curr = curr->next;

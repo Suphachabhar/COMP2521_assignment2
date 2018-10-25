@@ -5,6 +5,7 @@
 #include <assert.h>
 #include <string.h>
 #include "BSTree.h"
+#include "c99.h"
 
 
 
@@ -46,7 +47,11 @@ void writeBSTreeNodeInFile(BSTree t,FILE *data)
 
 	BSTSet curr = t->url_list;
 	while (curr != NULL) {
-		fprintf(data, "%s ", curr->url);
+		if (curr->next == NULL){
+			fprintf(data, "%s", curr->url);
+		} else {
+			fprintf(data, "%s ", curr->url);
+		}
 		curr = curr->next;
 	}
 	fprintf(data, "\n");

@@ -7,6 +7,7 @@
 #include <string.h>
 #include "Graph.h"
 #include "DLList.h"
+#include "c99.h"
 
 #define strEQ(g,t) (strcmp((g),(t)) == 0)
 

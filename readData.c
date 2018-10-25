@@ -7,10 +7,11 @@
 #include "DLList.h"
 #include "Graph.h"
 #include "BSTree.h"
+#include "c99.h"
 
 void fatal(char *);
 BSTree updateInvertedIndex(BSTree t, FILE *data, char *url);
-char *normalize(char *text);
+char *normalized(char *text);
 
 DLList List_of_Urls()
 {
@@ -80,7 +81,7 @@ BSTree updateInvertedIndex(BSTree t, FILE *data, char *url)
             else
             {
                 // printf("%s\n", url);
-                char *n_text = normalize(text);
+                char *n_text = normalized(text);
                 t = BSTreeInsert(t, n_text);
                 BSTree t_node = BSTreeFind(t, n_text);
                 t_node->url_list = insertNode(t_node->url_list, url);
@@ -94,7 +95,7 @@ BSTree updateInvertedIndex(BSTree t, FILE *data, char *url)
     return t;
 }
 
-char *normalize(char *text)
+char *normalized(char *text)
 {
     //int size = strlen(text);
     int i = 0;

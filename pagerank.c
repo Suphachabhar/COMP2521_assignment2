@@ -6,6 +6,7 @@
 #include "readData.h"
 #include "DLList.h"
 #include "Graph.h"
+#include "c99.h"
 
 int main(int argc, char **argv)
 {
@@ -31,7 +32,7 @@ int main(int argc, char **argv)
     sortDLListByPageRank(list_Urls_PageRanks);
     // printDLList(list_Urls_PageRanks);
     FILE *data;
-    data = fopen("pagerankList1.txt", "w+");
+    data = fopen("pagerankList.txt", "w+");
     putDLList(data,list_Urls_PageRanks);
     return 0;
     //}

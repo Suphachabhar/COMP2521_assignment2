@@ -7,6 +7,7 @@
 #include <string.h>
 #include <assert.h>
 #include "DLList.h"
+#include "c99.h"
 
 
 // data structures representing DLList
